@@ -1,0 +1,34 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  min-height: 600px;
+  border-radius: 10px;
+}
+
+div {
+  width: 410px;
+  text-align: center;
+}
+img {
+  margin-bottom: 54px;
+}
+h1 {
+  color: #3a4374;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+p {
+  color: #647196;
+  margin-bottom: 48px;
+}
+button {
+  border-radius: 10px;
+  background: #ad1fea;
+  color: #fff;
+  padding: 12.5px 24px;
+  font-size: 14px;
+  font-weight: 700;
+}

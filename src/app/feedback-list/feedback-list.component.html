@@ -1,0 +1,20 @@
+<section>
+  <header>
+    <img src="../../assets/bulb.svg" />
+    <h2>6 Suggestions</h2>
+
+    <div class="sort">
+      <p>Sort by :</p>
+      <button class="toggle">
+        Most upvotes <img src="../../assets/arrow-down.svg" />
+      </button>
+    </div>
+
+    <button class="feedback-btn">+ Add Feedback</button>
+  </header>
+
+  <app-feedback *ngIf="false; else elseBlock"></app-feedback>
+  <ng-template #elseBlock>
+ <app-no-feedback></app-no-feedback>
+  </ng-template>
+</section>
