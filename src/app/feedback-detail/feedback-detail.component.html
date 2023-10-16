@@ -1,0 +1,106 @@
+<section>
+  <div class="buttons">
+    <a routerLink="">
+      <button class="back-btn">
+        <img src="../../assets/arrow-left.svg" alt="" />
+        Go Back
+      </button>
+    </a>
+    <a [routerLink]="['/edit-feedback',1]">
+    <button class="edit-btn">
+
+            Edit Feedback
+            
+          </button>
+        </a>
+  </div>
+  <div class="feedback">
+    <button class="upvote">
+      <img src="../../assets/blue-arrow-up.svg" alt="" />112
+    </button>
+    <div class="details">
+      <h3>Add tags for solutions</h3>
+      <p>Easier to search for solutions based on a specific stack.</p>
+
+      <span class="tag">Enhancement</span>
+    </div>
+    <div class="comment-box">
+      <button class="comment-btn">
+        <img src="../../assets/comment.svg" alt="" />
+      </button>
+
+      <p>2</p>
+    </div>
+  </div>
+
+  <div class="comment-list-box">
+    <h2>4 Comments</h2>
+
+    <div class="comment">
+      <div class="heading">
+        <!-- <div class="avatar"></div> -->
+        <div data-initials="EM"></div>
+        <div class="name">
+          <h3>Elijah Moss</h3>
+          <p>@hexagon.bestagon</p>
+        </div>
+        <button>Reply</button>
+      </div>
+      <p class="text">
+        Also, please allow styles to be applied based on system preferences. I
+        would love to be able to browse Frontend Mentor in the evening after my
+        device’s dark mode turns on without the bright background it currently
+        has.
+      </p>
+    </div>
+    <div class="comment">
+      <div class="heading">
+        <!-- <div class="avatar"></div> -->
+        <div data-initials="JS"></div>
+        <div class="name">
+          <h3>James Skinner</h3>
+          <p>@hummingbird1</p>
+        </div>
+        <button>Reply</button>
+      </div>
+      <p class="text">
+        Second this! I do a lot of late night coding and reading. Adding a dark
+        theme can be great for preventing eye strain and the headaches that
+        result. It’s also quite a trend with modern apps and apparently saves
+        battery life.
+      </p>
+      <div class="replies">
+        <div class="comment reply">
+          <div class="heading">
+            <!-- <div class="avatar"></div> -->
+            <div data-initials="AQ"></div>
+            <div class="name">
+              <h3>Elijah Moss</h3>
+              <p>@hexagon.bestagon</p>
+            </div>
+          </div>
+          <p class="text">
+            <span> @hummingbird1 </span> While waiting for dark mode, there are
+            browser extensions that will also do the job. Search for "dark
+            theme” followed by your browser. There might be a need to turn off
+            the extension for sites with naturally black backgrounds though.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="add-comment-box">
+    <h2>Add Comment</h2>
+    <textarea
+      name=""
+      id=""
+      placeholder="Type your comment here"
+      maxlength="250"
+    ></textarea>
+    <div>
+      <p>250 Characters left</p>
+      <button>Post Comment</button>
+    </div>
+  </div>
+</section>

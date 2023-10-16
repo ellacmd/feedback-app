@@ -20,8 +20,10 @@ header > img {
 h2 {
   margin-right: 38px;
 }
-.feedback-btn {
+.feedback-link {
   margin-left: auto;
+}
+.feedback-btn {
   border-radius: 10px;
   background: #ad1fea;
   padding: 12.5px 25px;
@@ -40,4 +42,49 @@ h2 {
   font-size: 14px;
   margin-left: 5px;
   cursor: pointer;
+}
+::ng-deep .select .mdc-text-field--filled {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+::ng-deep .select .mdc-line-ripple--active::after {
+  border: none !important;
+}
+
+::ng-deep .select .mdc-line-ripple--active {
+  background-color: transparent !important;
+}
+::ng-deep .select .mat-mdc-select-value,
+::ng-deep .select .mat-mdc-select-placeholder,
+::ng-deep .select .mat-mdc-select-arrow {
+  color: #fff !important;
+}
+
+::ng-deep .select .mat-mdc-select-value {
+  width: fit-content !important;
+  margin-right: 10px;
+  font-weight: 700;
+}
+::ng-deep
+  .select
+  .mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-line-ripple::before {
+  border: none !important;
+}
+.select {
+  height: 50px;
+}
+::ng-deep .select .mat-mdc-form-field:hover {
+  background-color: transparent !important;
+}
+::ng-deep .select .mat-mdc-form-field-subscript-wrapper {
+  height: 0;
+}
+::ng-deep .select .mat-mdc-form-field-focus-overlay {
+  display: none;
+}
+.select p {
+  font-size: 14px;
+  display: inline;
 }

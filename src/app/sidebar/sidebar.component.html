@@ -8,17 +8,19 @@
       #btnElement
       *ngFor="let category of categories"
       (click)="handleClick(category)"
-      [ngClass]="{'active': category === selectedCategory }"
+      [ngClass]="{ active: category === selectedCategory }"
     >
       {{ category }}
     </button>
- 
   </div>
   <div class="roadmap-box">
     <div class="title">
       <h3>Roadmap</h3>
-      <button>View</button>
-    </div>
+      <a routerLink="/roadmap">
+
+        <button>View</button>
+      </a>
+      </div>
     <ul>
       <li class="planned">Planned <span>2</span></li>
       <li class="in-progress">In-Progress <span>3</span></li>

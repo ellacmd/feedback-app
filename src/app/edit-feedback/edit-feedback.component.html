@@ -1,0 +1,60 @@
+<section>
+  <button class="back-btn" (click)="goBackToPrevPage()">
+    <img src="../../assets/arrow-left.svg" alt="" />
+    Go Back
+  </button>
+
+  <div class="edit-box">
+    <img src="../../assets//edit-circle.svg" alt="" />
+    <h2>Editing ‘Add a dark theme option’</h2>
+
+    <h3>Feedback Title</h3>
+    <p>Add a short, descriptive headline</p>
+    <input type="text" [value]="'Please add a dark theme option'" />
+
+    <h3>Category</h3>
+    <p>Choose a category for your feedback</p>
+    <div >
+      <mat-form-field id="selectwrapper">
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="selectedCategory">
+          <mat-option value="feature">Feature</mat-option>
+          <mat-option value="ui">UI</mat-option>
+          <mat-option value="ux">UX</mat-option>
+          <mat-option value="enhancemnt">Enhancement</mat-option>
+          <mat-option value="bug">Bug</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <h3>Update Status</h3>
+    <p>Change feedback state</p>
+    <div>
+      <mat-form-field style="width: 100%; ">
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="selectedStatus">
+          <mat-option value="suggestion">Suggestion</mat-option>
+          <mat-option value="planned">Planned</mat-option>
+          <mat-option value="in-progress">In Progress</mat-option>
+          <mat-option value="live">Live</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <h3>Feedback Detail</h3>
+    <p>Include any specific comments on what should be improved, added, etc.</p>
+    <textarea
+      type="text"
+      [value]="
+        'It would help people with light sensitivities and who prefer dark mode.'
+      "
+    ></textarea>
+    <div class="buttons">
+      <button class="delete">Delete</button>
+      <div>
+        <button class="cancel">Cancel</button>
+        <button class="add">Add Feedback</button>
+      </div>
+    </div>
+  </div>
+</section>

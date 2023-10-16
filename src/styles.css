@@ -6,11 +6,17 @@
 body {
   background-color: #f2f4ff;
   min-height: 100vh;
-  font-family: 'Jost', sans-serif;
-  padding:  40px;
-
+  font-family: "Jost", sans-serif;
+  padding: 40px;
 }
-button{
+button {
   border: none;
   cursor: pointer;
+  font-family: 'Jost';
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+

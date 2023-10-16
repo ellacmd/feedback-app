@@ -1,0 +1,38 @@
+<section>
+  <button class="back-btn" (click)="goBackToPrevPage()">
+    <img src="../../assets/arrow-left.svg" alt="" />
+    Go Back
+  </button>
+
+  <div class="edit-box">
+    <img src="../../assets/add-circle.svg" alt="" />
+    <h2>Create New Feedback</h2>
+
+    <h3>Feedback Title</h3>
+    <p>Add a short, descriptive headline</p>
+    <input type="text" />
+
+    <h3>Category</h3>
+    <p>Choose a category for your feedback</p>
+    <div>
+      <mat-form-field class="add-select" style="width: 100%">
+        <mat-label>Select an option</mat-label>
+        <mat-select>
+          <mat-option value="feature">Feature</mat-option>
+          <mat-option value="ui">UI</mat-option>
+          <mat-option value="ux">UX</mat-option>
+          <mat-option value="enhancemnt">Enhancement</mat-option>
+          <mat-option value="bug">Bug</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <h3>Feedback Detail</h3>
+    <p>Include any specific comments on what should be improved, added, etc.</p>
+    <textarea type="text"></textarea>
+    <div class="buttons">
+      <button class="cancel">Cancel</button>
+      <button class="add">Add Feedback</button>
+    </div>
+  </div>
+</section>
