@@ -6,6 +6,7 @@ section {
   padding: 28px 32px;
   display: flex;
   gap: 49px;
+  margin-bottom: 20px;
 }
 .upvote {
   width: 40px;

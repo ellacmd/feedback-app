@@ -1,6 +1,7 @@
 section {
   max-width: 540px;
   margin: 0 auto;
+  padding: 40px;
 }
 .back-btn {
   color: #647196;
@@ -98,9 +99,9 @@ textarea::placeholder {
   width: 100%;
 }
 
-::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+section ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   background: #f7f8fd !important;
 }
-::ng-deep .mat-mdc-select-value {
+ section ::ng-deep .mat-mdc-select-value {
   color: #3a4374;
 }

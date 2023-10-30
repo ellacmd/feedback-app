@@ -6,30 +6,33 @@
         Go Back
       </button>
     </a>
-    <a [routerLink]="['/edit-feedback',1]">
-    <button class="edit-btn">
-
-            Edit Feedback
-            
-          </button>
-        </a>
+    <a *ngIf="isFeedbackPoster" [routerLink]="['/edit-feedback', 1]">
+      <button class="edit-btn">Edit Feedback</button>
+    </a>
   </div>
   <div class="feedback">
     <button class="upvote">
-      <img src="../../assets/blue-arrow-up.svg" alt="" />112
+      <img src="../../assets/blue-arrow-up.svg" alt="" />{{
+        feedbackDetails.upvotes
+      }}
     </button>
     <div class="details">
-      <h3>Add tags for solutions</h3>
-      <p>Easier to search for solutions based on a specific stack.</p>
+      <h3>{{ feedbackDetails.title }}</h3>
+      <p>{{ feedbackDetails.description }}</p>
 
-      <span class="tag">Enhancement</span>
+      <span class="tag">
+        {{
+          feedbackDetails.category.charAt(0).toUpperCase() +
+            feedbackDetails.category.slice(1)
+        }}
+      </span>
     </div>
     <div class="comment-box">
       <button class="comment-btn">
         <img src="../../assets/comment.svg" alt="" />
       </button>
 
-      <p>2</p>
+      <p>{{ feedbackDetails.commentCount }}</p>
     </div>
   </div>
 
@@ -93,13 +96,15 @@
   <div class="add-comment-box">
     <h2>Add Comment</h2>
     <textarea
+      [(ngModel)]="value"
+      (ngModelChange)="valueChange(value)"
+      maxlength="250"
       name=""
       id=""
       placeholder="Type your comment here"
-      maxlength="250"
     ></textarea>
     <div>
-      <p>250 Characters left</p>
+      <p>{{ 250 - value.length }} Characters left</p>
       <button>Post Comment</button>
     </div>
   </div>

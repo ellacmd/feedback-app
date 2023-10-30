@@ -1,6 +1,7 @@
 section {
   max-width: 540px;
   margin: 0 auto;
+  padding: 40px;
 }
 .back-btn {
   color: #647196;
@@ -49,9 +50,10 @@ h3 {
   border: none;
   padding: 19px 24px;
   width: 100%;
-  margin-bottom: 24px;
 }
-
+.error {
+  color: #d73737 !important;
+}
 textarea {
   width: 100%;
   caret-color: #4661e6;
@@ -62,7 +64,7 @@ textarea {
   font-family: "Jost", sans-serif;
   color: #3a4374;
   resize: none;
-  margin-bottom: 27px;
+
   font-size: 16px;
 }
 textarea:active,
@@ -75,10 +77,16 @@ textarea::placeholder {
   font-size: 15px;
 }
 .buttons {
-display: flex;
-justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
-.delete,
+button:disabled {
+  background-color: #647196;
+  cursor: not-allowed;
+}
+
 .cancel,
 .add {
   border-radius: 10px;

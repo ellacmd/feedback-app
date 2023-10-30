@@ -6,8 +6,11 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 import { EditFeedbackComponent } from './edit-feedback/edit-feedback.component';
 import { RoadmapComponent } from './roadmap/roadmap.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+ 
   {
     path: '',
     component: HomePageComponent,
@@ -32,11 +35,16 @@ const routes: Routes = [
     path: 'roadmap',
     component: RoadmapComponent,
     title: 'Roadmap',
+  }, {
+    path: 'login',
+    component: LoginComponent,
+    title: 'Login',
   },
+   { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

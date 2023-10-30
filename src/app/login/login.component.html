@@ -1,0 +1,92 @@
+<section>
+  <div>
+    <mat-tab-group animationDuration="500ms">
+      <mat-tab label="Login" class="tab">
+        <form [formGroup]="loginForm" (submit)="handleLogin()">
+          <div class="box">
+            <label for="username"> Username:</label>
+            <input type="text" id="username" formControlName="username" />
+            <p
+              *ngIf="
+                loginUsername?.invalid &&
+                (loginUsername?.dirty || loginUsername?.touched)
+              "
+            >
+              Username is required!
+            </p>
+          </div>
+
+          <div class="box">
+            <label for="password"> Password: </label>
+            <input type="password" id="password" formControlName="password" />
+            <p
+              *ngIf="
+                loginPassword?.invalid &&
+                (loginPassword?.touched || loginPassword?.dirty)
+              "
+            >
+              Password is required!
+            </p>
+          </div>
+          <button [disabled]="loginForm.invalid">Login</button>
+          <p>{{ loginError }}</p>
+        </form>
+      </mat-tab>
+      <mat-tab label="Sign up">
+        <form [formGroup]="signupForm" (submit)="handleSignup()">
+          <div class="name-box">
+            <div>
+              <label for="firstName"> First Name:</label>
+              <input type="text" id="firstName" formControlName="firstName" />
+              <p
+                *ngIf="
+                  firstName?.invalid && (firstName?.dirty || firstName?.touched)
+                "
+              >
+                First name is required!
+              </p>
+            </div>
+            <div>
+              <label for="lastName"> Last Name:</label>
+              <input type="text" id="lastName" formControlName="lastName" />
+              <p
+                *ngIf="
+                  lastName?.invalid && (lastName?.dirty || lastName?.touched)
+                "
+              >
+                Last name is required!
+              </p>
+            </div>
+          </div>
+
+          <div class="box">
+            <label for="username"> Username:</label>
+            <input type="text" id="username" formControlName="username" />
+            <p
+              *ngIf="
+                username?.invalid && (username?.dirty || username?.touched)
+              "
+            >
+              Username is required!
+            </p>
+          </div>
+          <div class="box">
+            <label for="password"> Password: </label>
+            <input type="password" id="password" formControlName="password" />
+            <p
+              *ngIf="
+                password?.invalid && (password?.dirty || password?.touched)
+              "
+            >
+              Password name is required!
+            </p>
+          </div>
+          <button [disabled]="signupForm.invalid">Sign Up</button>
+          <p>
+            {{ signupError }}
+          </p>
+        </form></mat-tab
+      >
+    </mat-tab-group>
+  </div>
+</section>

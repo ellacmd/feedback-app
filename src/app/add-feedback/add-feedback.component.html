@@ -8,31 +8,57 @@
     <img src="../../assets/add-circle.svg" alt="" />
     <h2>Create New Feedback</h2>
 
-    <h3>Feedback Title</h3>
-    <p>Add a short, descriptive headline</p>
-    <input type="text" />
+    <form [formGroup]="addFeedbackForm">
+      <h3>Feedback Title</h3>
+      <p>Add a short, descriptive headline</p>
+      <input formControlName="title" type="text" />
+      <p
+        class="error"
+        *ngIf="title?.invalid && (title?.dirty || title?.touched)"
+      >
+        Title is required!
+      </p>
 
-    <h3>Category</h3>
-    <p>Choose a category for your feedback</p>
-    <div>
-      <mat-form-field class="add-select" style="width: 100%">
-        <mat-label>Select an option</mat-label>
-        <mat-select>
-          <mat-option value="feature">Feature</mat-option>
-          <mat-option value="ui">UI</mat-option>
-          <mat-option value="ux">UX</mat-option>
-          <mat-option value="enhancemnt">Enhancement</mat-option>
-          <mat-option value="bug">Bug</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+      <h3 style="margin-top: 23px">Category</h3>
+      <p>Choose a category for your feedback</p>
+      <div>
+        <mat-form-field class="add-select" style="width: 100%">
+          <mat-label>Select an option</mat-label>
+          <mat-select formControlName="category">
+            <mat-option value="feature">Feature</mat-option>
+            <mat-option value="ui">UI</mat-option>
+            <mat-option value="ux">UX</mat-option>
+            <mat-option value="enhancemnt">Enhancement</mat-option>
+            <mat-option value="bug">Bug</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <h3>Feedback Detail</h3>
-    <p>Include any specific comments on what should be improved, added, etc.</p>
-    <textarea type="text"></textarea>
-    <div class="buttons">
-      <button class="cancel">Cancel</button>
-      <button class="add">Add Feedback</button>
-    </div>
+      <h3>Feedback Detail</h3>
+      <p>
+        Include any specific comments on what should be improved, added, etc.
+      </p>
+      <textarea formControlName="description" type="text"></textarea>
+      <p
+        *ngIf="
+          description?.invalid && (description?.dirty || description?.touched)
+        "
+        class="error"
+      >
+        Please give details!
+      </p>
+
+      <div class="buttons">
+        <button (click)="goBackToPrevPage()" class="cancel">Cancel</button>
+        <button
+          class="add"
+          (click)="addFeedback()"
+          [disabled]="addFeedbackForm.invalid"
+        >
+          Add Feedback
+        </button>
+      </div>
+      <p class="error">{{ addFeedbackError }}</p>
+    </form>
   </div>
 </section>

@@ -1,18 +1,23 @@
 <section>
-  <button class="upvote">
-    <img src="../../assets/blue-arrow-up.svg" alt="" />112
+  <button class="upvote" (click)="upvote($event)">
+    <img src="../../assets/blue-arrow-up.svg" alt="" />{{
+      productRequest.upvotes
+    }}
   </button>
 
   <div class="details">
-    <h3>Add tags for solutions</h3>
-    <p>Easier to search for solutions based on a specific stack.</p>
+    <h3>{{ productRequest.title }}</h3>
+    <p>{{ productRequest.description }}</p>
 
-    <span class="tag">Enhancement</span>
+    <span class="tag">{{
+      productRequest.category.charAt(0).toUpperCase() +
+        productRequest.category.slice(1)
+    }}</span>
   </div>
   <div class="comment-box">
     <button class="comment">
       <img src="../../assets/comment.svg" alt="" />
     </button>
-    <p>2</p>
+    <p>{{ productRequest.commentCount }}</p>
   </div>
 </section>

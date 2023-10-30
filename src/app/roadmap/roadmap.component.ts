@@ -82,6 +82,7 @@ export class RoadmapComponent {
 
   drop(event: CdkDragDrop<any>) {
     if (event.previousContainer === event.container) {
+      
       moveItemInArray(
         event.container.data,
         event.previousIndex,
@@ -89,6 +90,7 @@ export class RoadmapComponent {
       );
     } else {
       transferArrayItem(
+        
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,

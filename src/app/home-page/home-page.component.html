@@ -1,4 +1,102 @@
 <section>
-  <app-sidebar></app-sidebar>
-  <app-feedback-list></app-feedback-list>
+  <div class="sidebar">
+    <div class="header">
+      <div>
+        <h1>Feedback Board</h1>
+      </div>
+      <div class="login">
+        <a *ngIf="!user?.user?.firstname" routerLink="/login">
+          <button>
+            Login
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="login"
+            ></mat-icon>
+          </button>
+        </a>
+      </div>
+
+      <div class="logout" *ngIf="user?.user?.firstname">
+        <h4>
+          Hello
+          {{ name }}
+        </h4>
+
+        <button (click)="logout()">
+          Log out
+          <mat-icon
+            class="icon"
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="logout"
+          ></mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="filter-box">
+      <button
+        #btnElement
+        *ngFor="let category of categories"
+        (click)="handleClick(category)"
+        [ngClass]="{ active: category === selectedCategory }"
+      >
+        {{ category }}
+      </button>
+    </div>
+    <div class="roadmap-box">
+      <div class="title">
+        <h3>Roadmap</h3>
+        <a routerLink="/roadmap">
+          <button>View</button>
+        </a>
+      </div>
+      <ul>
+        <li class="planned">Planned <span>2</span></li>
+        <li class="in-progress">In-Progress <span>3</span></li>
+        <li class="live">Live <span>1</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <header>
+      <img src="../../assets/bulb.svg" />
+      <h2>{{ updatedProductRequestList?.length ?? 0 }} Suggestions</h2>
+
+      <div class="select">
+        <p>Sort By :</p>
+        <mat-form-field>
+          <mat-select
+            placeholder="Most Upvotes"
+            (selectionChange)="sortRequests($event.value)"
+          >
+            <mat-option value="most-upvotes">Most Upvotes</mat-option>
+            <mat-option value="least-upvotes">Least Upvotes</mat-option>
+            <mat-option value="most-comments">Most Comments</mat-option>
+            <mat-option value="least-comments">Least Comments</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <a routerLink="/add-feedback" class="feedback-link">
+        <button class="feedback-btn">+ Add Feedback</button>
+      </a>
+    </header>
+    <mat-spinner class="spinner" *ngIf="showSpinner; else ifElseBlock">Loading...</mat-spinner>
+    <ng-template #ifElseBlock>
+      <div *ngIf="updatedProductRequestList?.length; else elseBlock">
+        <div
+          *ngFor="let request of updatedProductRequestList"
+          [state]="request"
+          [routerLink]="['details', request.id]"
+          style="cursor: pointer"
+        >
+          <app-feedback [productRequest]="request"> </app-feedback>
+        </div>
+      </div>
+
+      <ng-template #elseBlock>
+        <app-no-feedback></app-no-feedback>
+      </ng-template>
+    </ng-template>
+  </div>
 </section>

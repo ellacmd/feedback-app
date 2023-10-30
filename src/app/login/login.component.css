@@ -1,0 +1,89 @@
+section {
+  background-image: radial-gradient(
+    166.82% 166.82% at 103.9% -10.39%,
+    #bd3f5d 0%,
+    #7c33b4 53.09%,
+    #2280b2 100%
+  );
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+section > div {
+  background-color: #fff;
+  width: 600px;
+  border-radius: 5px;
+}
+form {
+  padding: 40px 20px;
+  overflow: hidden;
+}
+label,
+input {
+  display: block;
+  width: 400px;
+}
+label {
+  color: #647196;
+  font-weight: 600;
+}
+
+input {
+  border-radius: 5px;
+  background: #f7f8fd;
+  color: #3a4374;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  padding: 19px 16px;
+  width: 100%;
+}
+p {
+  color: rgb(218, 85, 85);
+}
+
+button {
+  border-radius: 10px;
+  background: #a337f6;
+  padding: 19px 16px;
+  color: #fff;
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+}
+::ng-deep .mdc-tab__text-label {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
+
+.short-box {
+  width: 48%;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+.short-box:not(:last-of-type) {
+  margin-right: 15px;
+}
+input.ng-touched.ng-invalid {
+  border: 1px solid rgb(218, 85, 85);
+}
+
+button:disabled {
+  background-color: #647196;
+  cursor: not-allowed;
+}
+.box {
+  margin-bottom: 24px;
+}
+.name-box {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.name-box div {
+  width: 48%;
+}

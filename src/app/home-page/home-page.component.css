@@ -1,5 +1,252 @@
-section{
-    display: grid;
-    gap: 30px;
-    grid-template-columns: 1fr 4fr;
+section {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 4fr;
+  padding: 40px;
+}
+.header,
+.filter-box,
+.roadmap-box {
+  width: 255px;
+  margin-bottom: 24px;
+  padding: 24px;
+  border-radius: 10px;
+}
+.sidebar {
+  width: 255px;
+}
+
+.header {
+  background-image: radial-gradient(
+    166.82% 166.82% at 103.9% -10.39%,
+    #e84d70 0%,
+    #a337f6 53.09%,
+    #28a7ed 100%
+  );
+  height: 137px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+.login {
+  display: flex;
+  gap: 12px;
+}
+
+.logout button {
+  background-color: transparent;
+  display: flex;
+  color: #fff;
+  font-size: 16px;
+}
+.login button {
+  background-color: transparent;
+  display: flex;
+  gap: 4px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 16px;
+  margin-top: 4px;
+}
+.login div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.login div button {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.header p {
+  color: #f7f8fd;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.filter-box {
+  background-color: #fff;
+  height: 166px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.filter-box button {
+  min-width: 48px;
+  height: 30px;
+  padding: 5px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #4661e6;
+  background-color: #f2f4ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+.filter-box button.active {
+  background-color: #4661e6;
+  color: #f2f4ff;
+}
+.filter-box button:hover {
+  background-color: #cfd7ff;
+  color: #3a4374;
+}
+.filter-box button.active:hover {
+  background-color: #4661e6;
+  color: #f2f4ff;
+}
+.roadmap-box {
+  background-color: #fff;
+  height: 178px;
+  padding: 19px 24px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.title h3 {
+  font-size: 18px;
+  font-weight: 700px;
+  color: #3a4374;
+}
+.title button {
+  background-color: transparent;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4661e6;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  color: #647196;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+li span {
+  display: block;
+  font-weight: 700;
+  margin-left: auto;
+}
+li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  margin-right: 16px;
+}
+.planned::before {
+  background-color: #f49f85;
+}
+.in-progress::before {
+  background-color: #ad1fea;
+}
+.live::before {
+  background-color: #62bcfa;
+}
+
+header {
+  border-radius: 10px;
+  background: #373f68;
+  color: #fff;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sort {
+  display: flex;
+}
+header > img {
+  margin-right: 16px;
+}
+h2 {
+  margin-right: 38px;
+}
+.feedback-link {
+  margin-left: auto;
+}
+.feedback-btn {
+  border-radius: 10px;
+  background: #ad1fea;
+  padding: 12.5px 25px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+}
+.sort p {
+  font-size: 14px;
+}
+.toggle {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+::ng-deep .select .mdc-text-field--filled {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+::ng-deep .select .mdc-line-ripple--active::after {
+  border: none !important;
+}
+
+::ng-deep .select .mdc-line-ripple--active {
+  background-color: transparent !important;
+}
+::ng-deep .select .mat-mdc-select-value,
+::ng-deep .select .mat-mdc-select-placeholder,
+::ng-deep .select .mat-mdc-select-arrow {
+  color: #fff !important;
+}
+
+::ng-deep .select .mat-mdc-select-value {
+  width: fit-content !important;
+  margin-right: 10px;
+  font-weight: 700;
+}
+::ng-deep
+  .select
+  .mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-line-ripple::before {
+  border: none !important;
+}
+.select {
+  height: 50px;
+}
+::ng-deep .select .mat-mdc-form-field:hover {
+  background-color: transparent !important;
+}
+::ng-deep .select .mat-mdc-form-field-subscript-wrapper {
+  height: 0;
+}
+::ng-deep .select .mat-mdc-form-field-focus-overlay {
+  display: none;
+}
+.select p {
+  font-size: 14px;
+  display: inline;
+}
+.spinner {
+  margin: 0 auto;
+  margin-top: 200px;
 }
