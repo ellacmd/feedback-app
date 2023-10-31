@@ -22,13 +22,14 @@ export class FeedbackDetailComponent {
   value: string = '';
 
   constructor() {
+
     this.globalService
-      .getSingleProductRequest(this.feedbackDetails.id)
+      .getSingleProductRequest(this.feedbackDetails?.id)
       .subscribe({
         next: ({ productRequest }: any) => {
           this.feedbackDetails = productRequest;
           this.isFeedbackPoster =
-            this.feedbackDetails.user === this.globalService.user.user.id;
+            this.feedbackDetails.user === JSON.parse(localStorage.getItem('user') || '{}').user.id
         },
       });
   }

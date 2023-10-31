@@ -69,7 +69,7 @@ export class LoginComponent {
         next: (res: any) => {
          
           localStorage.setItem('user', JSON.stringify(res));
-          this.router.navigate([''], res);
+          this.router.navigate([''], res).then();
         },
         error: ({ error }) => {
           this.signupError = error.message;
